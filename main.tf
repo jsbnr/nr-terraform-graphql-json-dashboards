@@ -32,12 +32,12 @@ resource "graphql_mutation" "dashboard" {
       widgets = [
         {
           name = "Amazon traffic"
-          accountId = 2460987
+          accountId = var.accountId
           whereClause ="where api like 'amazon%'"
         },
         {
           name = "Google traffic"
-          accountId = 2460987
+          accountId = var.accountId
           whereClause ="where api like 'google%'"
         }
       ]
