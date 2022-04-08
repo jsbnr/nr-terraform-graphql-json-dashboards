@@ -1,0 +1,8 @@
+mutation update($dashboard: DashboardInput!, $guid: EntityGuid!) {
+  dashboardUpdate( dashboard: $dashboard, guid: $guid) {
+    entityResult {
+      name
+      guid
+    }
+  }
+}

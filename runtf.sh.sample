@@ -1,0 +1,10 @@
+#!/bin/bash
+
+## RENAME THIS FILE runtf.sh and make sure its executable! Dont check it into Git (its in .gitignore)
+
+export NEW_RELIC_ACCOUNT_ID="0" # Your account ID
+export NEW_RELIC_API_KEY="NRAK-..." # A User API Key
+export TF_VAR_NEW_RELIC_API_KEY=$NEW_RELIC_API_KEY
+
+
+bash -c "terraform $1 $2 -var=\"accountId=${NEW_RELIC_ACCOUNT_ID}\""

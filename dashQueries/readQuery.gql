@@ -1,0 +1,10 @@
+query ($guid: [EntityGuid]!) {
+  actor {
+    dashboard: entity(guid: $guid) {
+      ... on DashboardEntity {
+        name
+        guid
+      }
+    }
+  }
+}

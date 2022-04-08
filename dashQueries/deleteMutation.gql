@@ -1,0 +1,5 @@
+mutation delete($guid: EntityGuid!) {
+  dashboardDelete(guid: $guid) {
+    status
+  }
+}

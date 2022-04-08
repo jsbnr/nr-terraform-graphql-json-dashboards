@@ -1,0 +1,8 @@
+mutation create($dashboard: DashboardInput!) {
+  dashboardCreate(accountId: 2460987, dashboard: $dashboard) {
+    entityResult {
+      name
+      guid
+    }
+  }
+}

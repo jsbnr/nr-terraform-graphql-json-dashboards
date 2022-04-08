@@ -1,0 +1,61 @@
+{
+  "name": "${DASHBOARD_NAME}",
+  "description": null,
+  "permissions": "PUBLIC_READ_WRITE",
+  "pages": [
+    {
+      "name": "${DASHBOARD_NAME}",
+      "description": null,
+      "widgets": [
+        %{ for widget in widgets ~}
+       
+        {
+          "title": "${widget.name}",
+          "layout": {
+            "column": 1,
+            "row": 1,
+            "width": 4,
+            "height": 3
+          },
+          "linkedEntityGuids": null,
+          "visualization": {
+            "id": "viz.line"
+          },
+          "rawConfiguration": {
+            "legend": {
+              "enabled": true
+            },
+            "nrqlQueries": [
+              {
+                "accountId": ${widget.accountId},
+                "query": "SELECT count(*) from Public_APICall TIMESERIES facet api ${widget.whereClause}"
+              }
+            ],
+            "yAxisLeft": {
+              "zero": true
+            }
+          }
+        },
+
+        %{ endfor ~}
+        
+        {
+          "title": "",
+          "layout": {
+            "column": 5,
+            "row": 1,
+            "width": 3,
+            "height": 3
+          },
+          "linkedEntityGuids": null,
+          "visualization": {
+            "id": "viz.markdown"
+          },
+          "rawConfiguration": {
+            "text": "Example JSON powered dashboard."
+          }
+        }
+      ]
+    }
+  ]
+}
