@@ -41,10 +41,11 @@ resource "graphql_mutation" "dashboard" {
           whereClause ="where api like 'google%'"
         }
       ]
-    }) 
+    }),
+    accountId = var.accountId
   }
   compute_mutation_keys = {
-    "guid" = "dashboardCreate.entityResult.guid"  # The guid from the the create is used for update, read, destroy
+    "guid" = "dashboardCreate.entityResult.guid"  # The guid from the create is used for update, read, destroy
   }
   compute_from_create = true
   create_mutation = file("./dashQueries/createMutation.gql")

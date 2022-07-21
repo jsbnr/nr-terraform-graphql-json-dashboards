@@ -1,5 +1,5 @@
-mutation create($dashboard: DashboardInput!) {
-  dashboardCreate(accountId: 2460987, dashboard: $dashboard) {
+mutation create($accountId: Int!, $dashboard: DashboardInput!) {
+  dashboardCreate(accountId: $accountId, dashboard: $dashboard) {
     entityResult {
       name
       guid
