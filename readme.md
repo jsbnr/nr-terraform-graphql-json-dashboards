@@ -1,8 +1,6 @@
 # New Relic Terraform JSON Dashboards
 This example project demontrates how you can use a [Terraform GraphQL provider](https://registry.terraform.io/providers/sullivtr/graphql/latest/docs) to provision New Relic Dashboards from JSON templates.
 
-Note: This only works with version 2.4.0 of the GraphQL provider. Version 2.5.0 adds  feature that is incompatible. See [Github issue](https://github.com/sullivtr/terraform-provider-graphql/issues/70).
-
 ## Installation
 Make sure terraform is installed. I recommend [tfenv](https://github.com/tfutils/tfenv) for managing your terraform binaries.
 
