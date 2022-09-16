@@ -1,13 +1,13 @@
 terraform {
-  required_version = "~> 1.1.7"
+  required_version = "~> 1.2.0"
   required_providers {
     newrelic = {
       source  = "newrelic/newrelic"
-      version = "~> 2.35.0"
+      version = "~> 3.2.0"
     }
     graphql = {
       source = "sullivtr/graphql"
-      version = "2.4.0" #This must be 2.4.0, 2.5.0+ does not work. See issue https://github.com/sullivtr/terraform-provider-graphql/issues/70
+      version = "2.5.3" 
     }
   }
 }
@@ -47,6 +47,7 @@ resource "graphql_mutation" "dashboard" {
   compute_mutation_keys = {
     "guid" = "dashboardCreate.entityResult.guid"  # The guid from the create is used for update, read, destroy
   }
+  enable_remote_state_verification = false
   compute_from_create = true
   create_mutation = file("./dashQueries/createMutation.gql")
   update_mutation = file("./dashQueries/updateMutation.gql")
