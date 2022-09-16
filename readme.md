@@ -25,3 +25,5 @@ Now apply the changes:
 ## State storage
 This demo does not include remote state storage. State will be stored locally.
 
+---
+Theres also this [solution](https://github.com/jsbnr/nr-terraform-json-nr1-dashboards)
