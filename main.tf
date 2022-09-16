@@ -28,7 +28,7 @@ provider "graphql" {
 resource "graphql_mutation" "dashboard" {
   mutation_variables = {
     dashboard = templatefile("${path.module}/dashQueries/dash.json",{
-      DASHBOARD_NAME = "GraphQL Provider Dash - Version Check 2.5.3" 
+      DASHBOARD_NAME = "GraphQL Provider Dash" 
       widgets = [
         {
           name = "Amazon traffic"
